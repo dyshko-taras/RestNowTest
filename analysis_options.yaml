@@ -37,7 +37,6 @@ linter:
     - iterable_contains_unrelated_type # Ensure contains() checks are type-safe.
 
     # Code organization and cleanliness
-    - avoid_classes_with_only_static_members # Avoid creating classes with only static members.
     - camel_case_extensions # Use camelCase naming for extension methods.
     - join_return_with_assignment # Combine return statements with assignments when possible.
     - avoid_setters_without_getters # Avoid creating setters without corresponding getters.

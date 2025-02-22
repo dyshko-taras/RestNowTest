@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:rest_now_test/constants/routes.dart';
 import 'package:rest_now_test/translations/messages.dart';
+import 'package:rest_now_test/ui/pages/main/main_page.dart';
 import 'package:rest_now_test/ui/pages/payment/payment_page.dart';
 import 'package:rest_now_test/ui/theme/theme.dart';
 import 'package:syncfusion_localizations/syncfusion_localizations.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
         initialRoute: AppRoutes.payment,
         routes: {
           AppRoutes.payment: (context) => const PaymentPage(),
-          AppRoutes.main: (context) => const PaymentPage(),
+          AppRoutes.main: (context) => const MainPage(),
         },
       ),
     );

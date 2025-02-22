@@ -2,19 +2,18 @@ import 'package:rest_now_test/utils/time_util.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AppPrefsKeys {
-  static const String _dateTimeKey = 'current_date_time';
+  static const String dateTimeKey = 'current_date_time';
 }
 
 class AppPreferences {
-  AppPreferences(this._sharedPreferences);
-  final SharedPreferences _sharedPreferences;
-
-  void saveCurrentDateTime() {
+  static Future<void> saveCurrentDateTime() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
     String formattedDateTime = formatDateTime(DateTime.now());
-    _sharedPreferences.setString(AppPrefsKeys._dateTimeKey, formattedDateTime);
+    await prefs.setString(AppPrefsKeys.dateTimeKey, formattedDateTime);
   }
 
-  String getCurrentDateTime() {
-    return _sharedPreferences.getString(AppPrefsKeys._dateTimeKey) ?? '';
+  static Future<String> getCurrentDateTime() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.getString(AppPrefsKeys.dateTimeKey) ?? '-';
   }
 }

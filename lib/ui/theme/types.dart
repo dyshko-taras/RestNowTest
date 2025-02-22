@@ -4,8 +4,8 @@ import 'package:rest_now_test/constants/fonts.dart';
 import 'colors.dart';
 
 class AppTypes {
-  
-  static TextStyle f20Regular = _buildTextStyle();
+  static TextStyle f14Bold = _buildTextStyle(size: 14);
+  static TextStyle f20Bold = _buildTextStyle();
 
   static TextStyle _buildTextStyle({
     String fontFamily = AppFonts.mainFont,
@@ -16,11 +16,12 @@ class AppTypes {
     Color decorationColor = AppColors.black,
   }) {
     return TextStyle(
-        fontFamily: fontFamily,
-        fontSize: size,
-        fontWeight: weight,
-        color: color,
-        decoration: decoration,
-        decorationColor: decorationColor);
+      fontFamily: fontFamily,
+      fontSize: size.sp,
+      fontWeight: weight,
+      color: color,
+      decoration: decoration,
+      decorationColor: decorationColor,
+    );
   }
 }

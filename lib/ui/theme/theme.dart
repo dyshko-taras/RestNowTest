@@ -5,15 +5,15 @@ import 'package:rest_now_test/ui/theme/colors.dart';
 ThemeData createTheme() {
   return ThemeData(
     useMaterial3: false,
-    primaryColor: Colors.white,
+    primaryColor: AppColors.white,
     colorScheme: const ColorScheme.light(
-      error: Colors.red,
+      error: AppColors.errorColorRed,
       onSurface: AppColors.white,
     ),
     fontFamily: AppFonts.mainFont,
-    scaffoldBackgroundColor: Colors.transparent,
+    scaffoldBackgroundColor: AppColors.black,
     appBarTheme: const AppBarTheme(
-      backgroundColor: Colors.transparent,
+      backgroundColor: AppColors.transparent,
       centerTitle: false,
       elevation: 0,
     ),

@@ -4,7 +4,12 @@ class MessagesEn extends Translations {
   @override
   Map<String, Map<String, String>> get keys => {
         'en_EN': {
-          'your_name': 'Your name',
+          'payment': 'Pay',
+          'last_payment': 'Last successful payment:',
+          'start_massage': 'Start massage',
+          'stop_massage': 'Stop massage',
+          'get_message': 'Get massage about massage',
+          'close': 'Close',
         },
       };
 }
