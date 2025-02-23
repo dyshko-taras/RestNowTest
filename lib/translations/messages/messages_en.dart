@@ -5,11 +5,13 @@ class MessagesEn extends Translations {
   Map<String, Map<String, String>> get keys => {
         'en_EN': {
           'payment': 'Pay',
-          'last_payment': 'Last successful payment:',
-          'start_massage': 'Start massage',
-          'stop_massage': 'Stop massage',
-          'get_message': 'Get massage about massage',
+          'lastPayment': 'Last successful payment:',
+          'startMassage': 'Start massage',
+          'stopMassage': 'Stop massage',
           'close': 'Close',
+          'paymentSuccess': 'Payment successful',
+          'fetchError': 'Error fetching data:',
+          'connectionError': 'Connection error:',
         },
       };
 }

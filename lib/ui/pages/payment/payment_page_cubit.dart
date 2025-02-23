@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rest_now_test/constants/app_preferences.dart';
 import 'package:rest_now_test/constants/routes.dart';
+import 'package:rest_now_test/constants/strings.dart';
+import 'package:rest_now_test/ui/components/app_snackbar.dart';
 import 'package:rest_now_test/ui/pages/payment/payment_page_state.dart';
 
 class PaymentPageCubit extends Cubit<PaymentPageState> {
@@ -16,8 +18,10 @@ class PaymentPageCubit extends Cubit<PaymentPageState> {
     emit(state.copyWith(isLoading: true));
     await AppPreferences.saveCurrentDateTime();
     await Future.delayed(const Duration(seconds: 3));
-    if (!context.mounted) return;
-    navigateToMainPage(context);
+    if (context.mounted) {
+      AppSnackBars.showSuccessSnackBar(context, AppStrings.paymentSuccess);
+      navigateToMainPage(context);
+    }
   }
 
   void navigateToMainPage(BuildContext context) {

@@ -5,11 +5,13 @@ class MessagesUA extends Translations {
   Map<String, Map<String, String>> get keys => {
         'uk_UA': {
           'payment': 'Оплатити',
-          'last_payment': 'Дата останьої успішної оплати:',
-          'start_massage': 'Старт масажу',
-          'stop_massage': 'Стоп масажу',
-          'get_message': 'Отримати повідомлення про масаж',
+          'lastPayment': 'Дата останьої успішної оплати:',
+          'startMassage': 'Старт масажу',
+          'stopMassage': 'Стоп масажу',
           'close': 'Закрити',
+          'paymentSuccess': 'Оплата пройшла успішно',
+          'fetchError': 'Помилка при отриманні даних:',
+          'connectionError': 'Помилка підключення:',
         },
       };
 }

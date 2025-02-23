@@ -19,7 +19,7 @@ class PaymentPage extends StatefulWidget {
 }
 
 class _PaymentPageState extends State<PaymentPage>
-    implements AfterLayoutMixin<PaymentPage> {
+    with AfterLayoutMixin<PaymentPage> {
   final PaymentPageCubit cubit = PaymentPageCubit();
 
   @override
@@ -49,38 +49,41 @@ class _PaymentPageState extends State<PaymentPage>
               Visibility(
                 visible: !state.isLoading,
                 child: Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    spacing: 30.h,
-                    children: [
-                      ElevatedButton(
-                        onPressed: () => cubit.onClick(context),
-                        style: ButtonStyles.orangeButtonWithWhiteBorder(),
-                        child: Text(
-                          AppStrings.payment,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20.w),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      spacing: 30.h,
+                      children: [
+                        ElevatedButton(
+                          onPressed: () => cubit.onClick(context),
+                          style: ButtonStyles.orangeButtonWithWhiteBorder(),
+                          child: Text(
+                            AppStrings.payment,
+                            style: AppTypes.f20Bold,
+                          ),
+                        ),
+                        Text(
+                          AppStrings.lastPayment,
                           style: AppTypes.f20Bold,
                         ),
-                      ),
-                      Text(
-                        AppStrings.lastPayment,
-                        style: AppTypes.f20Bold,
-                      ),
-                      Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 20.w,
-                          vertical: 10.h,
+                        Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 20.w,
+                            vertical: 10.h,
+                          ),
+                          decoration: BoxDecoration(
+                            color: AppColors.transparent,
+                            borderRadius: BorderRadius.circular(10.r),
+                            border: Border.all(color: AppColors.white),
+                          ),
+                          child: Text(
+                            state.lastPayment,
+                            style: AppTypes.f20Bold,
+                          ),
                         ),
-                        decoration: BoxDecoration(
-                          color: AppColors.transparent,
-                          borderRadius: BorderRadius.circular(10.r),
-                          border: Border.all(color: AppColors.white),
-                        ),
-                        child: Text(
-                          state.lastPayment,
-                          style: AppTypes.f20Bold,
-                        ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
